@@ -1,0 +1,39 @@
+{% extends '../portal/base.html' %}
+
+{% block content %}
+
+{% include 'blog/layout/blog_navbar.html' %}
+
+    <h1 class="display-6  text-center">List of Blog User</h1>
+
+    <div class="card-body">
+        <h4>Users List</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Registered</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.user_email }}</td>
+                    <td>{{ user.date_registered }}</td>
+                    <td><a type="button" class="btn btn-warning" href="user_update/{{ user.id }}">Update</a>
+                        <a type="button" class="btn btn-danger" href="user_delete/{{ user.id }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a type="button" class="btn btn-success" href="{%url 'add_user' %}">Add new user</a>
+    </div>
+
+
+
+{% endblock content %}
+

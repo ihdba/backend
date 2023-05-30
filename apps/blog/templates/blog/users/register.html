@@ -1,0 +1,31 @@
+{% extends 'blog/layout/base.html' %}
+
+{% block content %}
+
+    <div class="container bg-light shadow-md p-5">
+
+        <h3>Create your account</h3>
+
+        <h5>Start managing your clients</h5>
+
+        <form action="" autocomplete="off" method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <br>
+
+            <button type="submit" class="btn btn-primary w-100 btn-block p-2">Create account</button>
+
+        </form>
+        <br>
+
+        <div class="texts-center">
+            <p>Already have an account?</p>
+            <a href="{% url '' %}">Login</a>
+        </div>
+
+    </div>
+
+{% endblock content %}

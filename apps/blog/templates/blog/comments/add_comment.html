@@ -1,0 +1,22 @@
+{% extends 'blog/layout/base.html' %}
+
+
+
+{% block content %}
+
+{% include 'blog/layout/blog_navbar.html' %}
+
+<div class="mt-4">
+    <div class="card-body">
+        <h5>Add New Comment</h5>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p }}
+            <a type="button" class="btn btn-danger" href="{%url 'comments' %}">Cancel</a>
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+    </div>
+
+</div>
+    
+{% endblock content %}
