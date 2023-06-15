@@ -15,4 +15,5 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', include('apps.blog.urls')),
     path('recipes/', include('apps.recipes.urls')),
+    path('all_lists/', include('apps.lists.urls')),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

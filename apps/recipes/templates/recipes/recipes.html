@@ -2,30 +2,33 @@
 
 {% block content %}
 
+
+
+
 {% if user.is_authenticated %}
-<div class="col-md-6 offset-md-3 recipes">
-    <h1 class="mb-3 mt-4">Recipes </h1>
+    <div class="col-md-6 offset-md-3 recipes">
+        <h1 class="mb-3 mt-4">Recipes </h1>
 
-{% else %}
- 
-        <h2 class="mb-4">Login to browse our recipes.</h2>
+    {% else %}
+        
+            <h2 class="mb-4">Login to browse our recipes.</h2>
 
-        <form method="POST"  action="{% url 'home' %}">
-            {% csrf_token %}
+                <form method="POST"  action="{% url 'home' %}">
+                    {% csrf_token %}
 
-            <div class="mb-3">
-                <input type="text" class="form-control" name="username" placeholder="Username" required>
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn btn-secondary mt-5">Login</button>
-        </form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary mt-5">Login</button>
+                </form>
 
-        <h4>New user?</h4>
-        <a type="button" href= "{% url 'register' %}" class="btn btn-primary">Create your account</a>
+            <h4>New user?</h4>
+            <a type="button" href= "{% url 'register' %}" class="btn btn-primary">Create your account</a>
 
-    {% endif %}
-</div>
+        {% endif %}
+    </div>
 
 {% endblock content %}

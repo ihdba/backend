@@ -28,6 +28,12 @@ def home(request):
             return redirect('home')
     else:
         return render(request, 'recipes/recipes.html', context=context)
+   
+    
+# Login user
+
+def login_user(request):
+    pass
 
 
 

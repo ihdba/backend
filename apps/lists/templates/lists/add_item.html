@@ -1,0 +1,24 @@
+{% extends 'blog/layout/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'lists/lists_navbar.html' %}
+
+
+<div class="mt-4">
+    <div class="card-body">
+        <h5>Add New Item</h5>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <a type="button" class="btn btn-danger" href="{%url 'all_lists' %}">Cancel</a>
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'apps.todo',
     'apps.blog',
     'apps.recipes',
+    'apps.lists',
 
 
 ]
