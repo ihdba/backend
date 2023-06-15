@@ -9,7 +9,7 @@
 <div class="mt-4">
     <div class="card-body">
         <h5>Add New Item</h5>
-        <form method="post">
+        <form method="post" id="input_form">
             {% csrf_token %}
             {{form.as_p}}
             <a type="button" class="btn btn-danger" href="{%url 'all_lists' %}">Cancel</a>
