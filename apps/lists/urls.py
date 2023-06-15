@@ -10,6 +10,7 @@ urlpatterns = [
     # path('', views.all_lists, name='all_lists'),
     path('add_item/', views.addItem, name='add_item'),
     path('edit_item/<int:id>', views.itemUpdate, name='edit_item'),
+    path('itemDelete/<int:id>', views.itemDelete, name='delete_item'),
     # path('list_detail/<int:id>', views.list_detail, name='list_detail'),
 
     # using generic views

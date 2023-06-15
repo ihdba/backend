@@ -61,7 +61,13 @@ def addItem(request):
     return render(request,'lists/add_item.html',{'form':form})  
 
 
-
+def itemDelete(request, id):
+    item = Item.objects.get(id=id)
+    try:
+        item.delete()
+    except:
+        pass
+    return redirect('all_lists')
 
 # Class based views
 
