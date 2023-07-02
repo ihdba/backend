@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.recipes',
     'apps.lists',
+    'apps.training',
 
 
 ]
