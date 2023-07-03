@@ -1,9 +1,46 @@
-{% extends '../portal/base.html' %}
+{% extends 'blog/layout/base.html' %}
+{% load static %}
 
 {% block content %}
 
+
 <div class="container">
-    <h1>Portal</h1>
+    <h1>Deli Hellas</h1>
+    <hr>
+    <a type="button" href="{% url 'add_product' %}" class="btn btn-info">Add Product</a>
+
+
+        
+    <div class="container">
+
+
+
+        {% for product in products %}
+
+        {% if forloop.first %}
+            <div class="row mx-auto">
+        {% endif %}        
+                <div class="col-lg-4 col-md-4 col-12">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ product.img.url }}" class="card-img-top" alt="{{ product.title }}">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ product.title }}</h5>
+                          <p class="card-text">{{ product.description }}</p>
+                          <a href="#" class="btn btn-primary">{{ product.added }}e</a>
+                        </div>
+                      </div>
+                </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+            </div> <div class="row mx-auto mt-2">{% endif %} {% if forloop.last %} </div> {% endif %}
+
+        {% endfor %}
+    </div>
+    
+
+
+
 </div>
 
 {% endblock content %}
